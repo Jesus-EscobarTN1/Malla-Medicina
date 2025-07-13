@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular Interactiva</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 2rem;
+      background: #f9f9f9;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #444;
+    }
+    .materia {
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      border: 1px solid #ccc;
+    }
+    .materia.aprobada {
+      background: #d4edda;
+      border-color: #9fd39b;
+    }
+    .materia.habilitada {
+      background: #d9ecff;
+      border-color: #91c4ff;
+    }
+    .materia.bloqueada {
+      background: #eeeeee;
+      border-color: #ccc;
+      opacity: 0.6;
+    }
+    @media (max-width: 600px) {
+      .materia {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      #resumen {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Curricular Interactiva</h1>
+
+  <input id="buscador" type="text" placeholder="Buscar materia..." style="width: 100%; padding: 0.5rem; font-size: 1rem; margin-bottom: 1rem;" />
+  <div id="resumen" style="margin-bottom: 1rem; font-size: 1.1rem; font-weight: bold;"></div>
+  <button onclick="reiniciarProgreso()" style="margin-bottom: 1rem; padding: 0.5rem 1rem;">Reiniciar progreso</button>
+  <div id="contenedor"></div>
+
+  <script src="script5.js"></script>
+</body>
+</html>
