@@ -116,6 +116,8 @@ const aprobadasCount = materias.filter(m => m.aprobada).length;
 const porcentaje = Math.round((aprobadasCount / total) * 100);
 resumen.textContent = `Aprobadas: ${aprobadasCount} de ${total} (${porcentaje}%)`;
   const contenedor = document.getElementById("contenedor");
+  const filtroTexto = document.getElementById("buscador").value.toLowerCase();
+
   contenedor.innerHTML = "";
 
   const aprobadas = materias.filter(m => m.aprobada);
@@ -129,6 +131,7 @@ resumen.textContent = `Aprobadas: ${aprobadasCount} de ${total} (${porcentaje}%)
     contenedor.appendChild(h2);
 
     materiasSemestre.forEach(materia => {
+      if (!materia.nombre.toLowerCase().includes(filtroTexto)) return;
       const div = document.createElement("div");
       const estaAprobada = !!materia.aprobada;
       const habilitada = puedeCursarse(materia, aprobadas);
@@ -158,6 +161,6 @@ resumen.textContent = `Aprobadas: ${aprobadasCount} de ${total} (${porcentaje}%)
     });
   }
 }
-      
+      document.getElementById("buscador").addEventListener("input", renderMaterias);
 // Inicial
 renderMaterias();
