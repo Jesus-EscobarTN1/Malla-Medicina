@@ -6,27 +6,37 @@
   <title>Malla Curricular Interactiva</title>
   <style>
     body {
-      font-family: sans-serif;
-      margin: 2rem;
-      background: #f9f9f9;
-    }
-    h2 {
-      margin-top: 2rem;
-      color: #333;
-    }
-    .materia {
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .materia.disabled {
-      opacity: 0.5;
-    }
+  font-family: sans-serif;
+  margin: 2rem;
+  background: #f9f9f9;
+}
+h2 {
+  margin-top: 2rem;
+  color: #444;
+}
+.materia {
+  margin: 0.5rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  border: 1px solid #ccc;
+}
+.materia.aprobada {
+  background: #d4edda;
+  border-color: #9fd39b;
+}
+.materia.habilitada {
+  background: #d9ecff;
+  border-color: #91c4ff;
+}
+.materia.bloqueada {
+  background: #eeeeee;
+  border-color: #ccc;
+  opacity: 0.6;
+}
   </style>
 </head>
 <body>
