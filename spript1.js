@@ -110,6 +110,11 @@ function puedeCursarse(materia, aprobadas) {
 
 // Renderizado
 function renderMaterias() {
+  const resumen = document.getElementById("resumen");
+const total = materias.length;
+const aprobadasCount = materias.filter(m => m.aprobada).length;
+const porcentaje = Math.round((aprobadasCount / total) * 100);
+resumen.textContent = `Aprobadas: ${aprobadasCount} de ${total} (${porcentaje}%)`;
   const contenedor = document.getElementById("contenedor");
   contenedor.innerHTML = "";
 
